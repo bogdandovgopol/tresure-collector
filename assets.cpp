@@ -140,4 +140,3 @@ Asset* Assets::get_asset(std::string id)
 
 	return _assets[id];
 }
-

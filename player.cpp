@@ -124,11 +124,6 @@ void Player::collect_coin(int worth)
 	_score += worth;
 }
 
-int Player::get_score()
-{
-	return _score;
-}
-
 void Player::handle_enter_state(State state, Assets* assets)
 {
 	switch (state)

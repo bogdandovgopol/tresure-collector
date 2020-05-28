@@ -35,7 +35,7 @@ void Coin::simulate_AI(Uint32, Assets* assets, Input*, Scene* scene)
 
 	float distance_to_player = (portal_center - player_center).magnitude();
 
-	if (distance_to_player < 30.0f)
+	if (distance_to_player < 20.0f)
 	{
 		player->collect_coin(1);
 		const int coin_channel = 2;
