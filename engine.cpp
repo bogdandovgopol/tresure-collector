@@ -150,6 +150,10 @@ void Engine::render(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scen
 		game_object->render(milliseconds_to_simulate, assets, _renderer);
 	}
 	*/
+	//render bg
+	Texture* bgTexture = (Texture*)assets->get_asset("Texture.BG");
+	SDL_RenderCopy(_renderer, bgTexture->data(), NULL, NULL);
+
 	std::vector<Game_Object*> sorted_game_objects = scene->get_game_objects();
 	const struct
 	{
@@ -165,9 +169,6 @@ void Engine::render(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scen
 		game_object->render(milliseconds_to_simulate, assets, _renderer, config);
 	}
 
-	//render bg
-	Texture* bgTexture = (Texture*)assets->get_asset("Texture.BG");
-	SDL_RenderCopy(_renderer, bgTexture->data(), NULL, NULL);
 	SDL_RenderPresent(_renderer);
 }
 
