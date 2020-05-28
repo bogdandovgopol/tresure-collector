@@ -28,11 +28,6 @@ void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Rendere
 
 void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene* )
 {
-	//play attack animation when SPACEBAR is pressed
-	if (input->is_button_state(Input::Button::ATTACK, Input::Button_State::PRESSED))
-	{
-		push_state(State::Attack, assets);
-	}
 
 	//play die animation when X key is pressed
 	if (input->is_button_state(Input::Button::DIE, Input::Button_State::PRESSED))
@@ -43,31 +38,13 @@ void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene* )
 	switch (_state.top())
 	{
 	case State::Idle:
-		if (input->is_button_state(Input::Button::RUNNING, Input::Button_State::DOWN) && _velocity.magnitude() > 0.0f)
-		{
-			push_state(State::Run, assets);
-		}
-		else if (_velocity.magnitude() > 0.0f)
+		if (_velocity.magnitude() > 0.0f)
 		{
 			push_state(State::Walk, assets);
 		}
 		break;
 	case State::Walk:
 		if (_velocity.magnitude() == 0.0f)
-		{
-			pop_state(assets);
-		}
-		else if (input->is_button_state(Input::Button::RUNNING, Input::Button_State::PRESSED))
-		{
-			push_state(State::Run, assets);
-		}
-		break;
-	case State::Run:
-		if (_velocity.magnitude() == 0.0f)
-		{
-			pop_state(assets);
-		}
-		else if (input->is_button_state(Input::Button::RUNNING, Input::Button_State::RELEASED))
 		{
 			pop_state(assets);
 		}
@@ -148,25 +125,6 @@ void Player::handle_enter_state(State state, Assets* assets)
 
 		break;
 	}
-	case State::Run:
-	{
-		_texture_id = "Texture.Player.Run";
-		_speed = 0.3f;
-
-		const int running_channel = 2;
-		Sound* sound = (Sound*)assets->get_asset("Sound.Running");
-		Mix_PlayChannel(running_channel, sound->data(), -1);
-
-		break;
-	}
-	case State::Attack:
-	{
-		_texture_id = "Texture.Player.Attack";
-		const int attack_channel = 1;
-		Sound* sound = (Sound*)assets->get_asset("Sound.Attack");
-		Mix_PlayChannel(attack_channel, sound->data(), -1);
-		break;
-	}
 	case State::Die:
 	{
 		_texture_id = "Texture.Player.Die";
@@ -189,18 +147,6 @@ void Player::handle_exit_state(State state, Assets*)
 	{
 		const int walking_channel = 1;
 		Mix_HaltChannel(walking_channel);
-		break;
-	}
-	case State::Run:
-	{
-		const int running_channel = 2;
-		Mix_HaltChannel(running_channel);
-		break;
-	}
-	case State::Attack:
-	{
-		const int attack_channel = 1;
-		Mix_HaltChannel(attack_channel);
 		break;
 	}
 	case State::Die:

@@ -21,8 +21,6 @@ public:
 	{
 		Idle,
 		Walk,
-		Run,
-		Attack,
 		Die
 	};
 	void push_state(State state, Assets* assets);

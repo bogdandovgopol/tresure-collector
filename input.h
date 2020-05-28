@@ -17,8 +17,6 @@ public:
 		LEFT,
 		RIGHT,
 
-		RUNNING,
-		ATTACK,
 		DIE,
 
 		INCREASE_SPEED,

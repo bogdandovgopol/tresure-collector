@@ -13,29 +13,18 @@ Assets::Assets(SDL_Renderer* renderer)
 		_assets[texture->id()] = texture;
 	}
 
-	// Cache Dino Texture.
-	{
-		Texture* texture = new Texture("Texture.Dino", "Assets/dino.png", renderer);
-		_assets[texture->id()] = texture;
-	}
-
-	// Cache Dino Texture.
+	// Cache BG Texture.
 	{
 		Texture* texture = new Texture("Texture.BG", "Assets/bg.png", renderer);
 		_assets[texture->id()] = texture;
 	}
-	
-	// Cache Dino Walking Texture.
+
+	// Coin texture.
 	{
-		const int frame_count                    = 10;
+		const int frame_count = 9;
 		const Uint32 frame_duration_milliseconds = 100;
-		Animated_Texture* texture   = new Animated_Texture(
-			"Texture.Dino.Walking",
-			"Assets/dino.walking.png", 
-			renderer,
-			frame_count, 
-			frame_duration_milliseconds);
-		_assets[texture->id()] = texture;
+		Asset* coin_texture = new Animated_Texture("Texture.Coin", "Assets/coin.png", renderer, frame_count, frame_duration_milliseconds);
+		_assets[coin_texture->id()] = coin_texture;
 	}
 
 	// Create player idle texture.
@@ -86,6 +75,12 @@ Assets::Assets(SDL_Renderer* renderer)
 		Mix_PlayChannel(0, sound->data(), -1);
 	}
 
+	// Create coin pickup sound
+	{
+		Sound* sound = new Sound("Sound.Coin", "Assets/coin.wav");
+		_assets[sound->id()] = sound;
+	}
+
 	// Create walking sound
 	{
 		Sound* sound = new Sound("Sound.Walking", "Assets/walking.wav");
@@ -101,12 +96,6 @@ Assets::Assets(SDL_Renderer* renderer)
 	// Create die sound
 	{
 		Sound* sound = new Sound("Sound.Die", "Assets/die.wav");
-		_assets[sound->id()] = sound;
-	}
-
-	// Create attack sound
-	{
-		Sound* sound = new Sound("Sound.Attack", "Assets/attack.wav");
 		_assets[sound->id()] = sound;
 	}
 

@@ -1,2 +1,13 @@
-﻿  engine.cpp
+﻿  Coin.cpp
+  Portal_Entry.cpp
+  Portal_Exit.cpp
+  dino.cpp
+  editor.cpp
+  engine.cpp
+  game_object.cpp
+  game_scene.cpp
+  main.cpp
+  player.cpp
+  scene.cpp
+  Generating Code...
   Game.vcxproj -> \\Mac\Home\Desktop\Game.nosync\x64\Debug\Game.exe

@@ -123,18 +123,10 @@ void Input::get_input()
 					_button_state[Button::RIGHT] = Button_State::PRESSED;
 				}
 				break;
-			case SDL_SCANCODE_LSHIFT:
-				if (!is_button_state(Button::RUNNING, Button_State::DOWN))
-				{
-					_button_state[Button::RUNNING] = Button_State::PRESSED;
-				}
-				break;
 			case SDL_SCANCODE_X:
 				_button_state[Button::DIE] = Button_State::PRESSED;
 				break;
-			case SDL_SCANCODE_SPACE:
-				_button_state[Button::ATTACK] = Button_State::PRESSED;
-				break;
+
 			}
 			break;
 		case SDL_KEYUP:
@@ -151,9 +143,6 @@ void Input::get_input()
 				break;
 			case SDL_SCANCODE_D:
 				_button_state[Button::RIGHT] = Button_State::RELEASED;
-				break;
-			case SDL_SCANCODE_LSHIFT:
-				_button_state[Button::RUNNING] = Button_State::RELEASED;
 				break;
 			}
 			break;

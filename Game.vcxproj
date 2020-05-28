@@ -150,6 +150,7 @@
     <ClCompile Include="asset.cpp" />
     <ClCompile Include="assets.cpp" />
     <ClCompile Include="Circle_2D.cpp" />
+    <ClCompile Include="Coin.cpp" />
     <ClCompile Include="dino.cpp" />
     <ClCompile Include="editor.cpp" />
     <ClCompile Include="engine.cpp" />
@@ -165,13 +166,13 @@
     <ClCompile Include="text.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="vector_2D.cpp" />
-    <ClCompile Include="walking_dino.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animated_texture.h" />
     <ClInclude Include="asset.h" />
     <ClInclude Include="assets.h" />
     <ClInclude Include="Circle_2D.h" />
+    <ClInclude Include="Coin.h" />
     <ClInclude Include="configuration.h" />
     <ClInclude Include="dino.h" />
     <ClInclude Include="editor.h" />
@@ -188,7 +189,6 @@
     <ClInclude Include="text.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="vector_2D.h" />
-    <ClInclude Include="walking_dino.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc" />
