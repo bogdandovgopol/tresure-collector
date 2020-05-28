@@ -5,7 +5,7 @@
 
 #include "input.h"
 #include "scene.h"
-#include "dino.h"
+#include "Wall.h"
 
 class Editor
 {

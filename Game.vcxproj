@@ -151,7 +151,7 @@
     <ClCompile Include="assets.cpp" />
     <ClCompile Include="Circle_2D.cpp" />
     <ClCompile Include="Coin.cpp" />
-    <ClCompile Include="dino.cpp" />
+    <ClCompile Include="Wall.cpp" />
     <ClCompile Include="editor.cpp" />
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="game_object.cpp" />
@@ -174,7 +174,7 @@
     <ClInclude Include="Circle_2D.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="configuration.h" />
-    <ClInclude Include="dino.h" />
+    <ClInclude Include="Wall.h" />
     <ClInclude Include="editor.h" />
     <ClInclude Include="engine.h" />
     <ClInclude Include="game_object.h" />

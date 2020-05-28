@@ -60,9 +60,6 @@
     <ClCompile Include="text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dino.cpp">
-      <Filter>Textures</Filter>
-    </ClCompile>
     <ClCompile Include="Circle_2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -76,6 +73,9 @@
       <Filter>Textures</Filter>
     </ClCompile>
     <ClCompile Include="Coin.cpp">
+      <Filter>Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
       <Filter>Textures</Filter>
     </ClCompile>
   </ItemGroup>
@@ -125,9 +125,6 @@
     <ClInclude Include="vector_2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dino.h">
-      <Filter>Textures</Filter>
-    </ClInclude>
     <ClInclude Include="Circle_2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -141,6 +138,9 @@
       <Filter>Textures</Filter>
     </ClInclude>
     <ClInclude Include="Coin.h">
+      <Filter>Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
       <Filter>Textures</Filter>
     </ClInclude>
   </ItemGroup>

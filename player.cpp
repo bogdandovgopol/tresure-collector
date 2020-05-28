@@ -6,10 +6,10 @@
 Player::Player(std::string id)
 	: Game_Object(id, "Texture.Player.Idle")
 {
+	_height = 80;
+	_width = 80;
+	_translation = Vector_2D(300, 600);
 	_speed = 0.1f;
-
-	_collider.set_radius(_width / 5.0f);
-	_collider.set_translation(Vector_2D(_width / 2.0f, (float)_height));
 
 	_state.push(State::Idle);
 }
@@ -22,6 +22,20 @@ void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Rendere
 	
 	Animated_Texture* texture = (Animated_Texture*)assets->get_asset(_texture_id);
 	texture->update_frame(milliseconds_to_simulate);
+
+	//dont let player go outside of the frame
+	if (_translation.x() > 630) {
+		_translation = Vector_2D(630, _translation.y());
+	}
+	else if (_translation.x() < 0) {
+		_translation = Vector_2D(0, _translation.y());
+	}
+	else if (_translation.y() > 595) {
+		_translation = Vector_2D(_translation.x(), 595);
+	}
+	else if (_translation.y() < 0) {
+		_translation = Vector_2D(_translation.x(), 0);
+	}
 
 	Game_Object::render(milliseconds_to_simulate, assets, renderer, config);
 }

@@ -5,11 +5,9 @@
 Coin::Coin(std::string id)
 	: Game_Object(id, "Texture.Coin")
 {
-	// _x = 150;
-	// _y = 50;
 	_height = 30;
 	_width = 30;
-	_translation = Vector_2D(150, 50);
+	//_translation = Vector_2D(150, 50);
 	//_velocity = Vector_2D(0.02f, 0);
 }
 Coin::~Coin()
