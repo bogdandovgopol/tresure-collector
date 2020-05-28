@@ -8,7 +8,6 @@ Player::Player(std::string id)
 {
 	_height = 80;
 	_width = 80;
-	_translation = Vector_2D(300, 600);
 	_speed = 0.1f;
 
 	_state.push(State::Idle);

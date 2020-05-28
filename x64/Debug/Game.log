@@ -1,4 +1,9 @@
-﻿  game_scene.cpp
-  player.cpp
-  Generating Code...
-  Game.vcxproj -> \\Mac\Home\Desktop\Game.nosync\x64\Debug\Game.exe
+﻿  animated_texture.cpp
+  asset.cpp
+  assets.cpp
+  Bomb.cpp
+  Circle_2D.cpp
+  Coin.cpp
+  Wall.cpp
+  editor.cpp
+  engine.cpp

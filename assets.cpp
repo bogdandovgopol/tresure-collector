@@ -22,8 +22,16 @@ Assets::Assets(SDL_Renderer* renderer)
 	// Coin texture.
 	{
 		const int frame_count = 9;
-		const Uint32 frame_duration_milliseconds = 100;
+		const Uint32 frame_duration_milliseconds = 1000;
 		Asset* coin_texture = new Animated_Texture("Texture.Coin", "Assets/coin.png", renderer, frame_count, frame_duration_milliseconds);
+		_assets[coin_texture->id()] = coin_texture;
+	}
+
+	// Bomb texture.
+	{
+		const int frame_count = 1;
+		const Uint32 frame_duration_milliseconds = 100;
+		Asset* coin_texture = new Animated_Texture("Texture.Bomb", "Assets/bomb.png", renderer, frame_count, frame_duration_milliseconds);
 		_assets[coin_texture->id()] = coin_texture;
 	}
 
@@ -132,3 +140,4 @@ Asset* Assets::get_asset(std::string id)
 
 	return _assets[id];
 }
+

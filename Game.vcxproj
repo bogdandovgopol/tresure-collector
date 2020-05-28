@@ -149,6 +149,7 @@
     <ClCompile Include="animated_texture.cpp" />
     <ClCompile Include="asset.cpp" />
     <ClCompile Include="assets.cpp" />
+    <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="Circle_2D.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="Wall.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="animated_texture.h" />
     <ClInclude Include="asset.h" />
     <ClInclude Include="assets.h" />
+    <ClInclude Include="Bomb.h" />
     <ClInclude Include="Circle_2D.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="configuration.h" />
