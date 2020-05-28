@@ -40,7 +40,7 @@ Engine::Engine(std::string window_name, Configuration* config)
 		std::cout << "SDL Error: " << SDL_GetError() << std::endl;
 		exit(1);
 	}
-
+	SDL_SetWindowResizable(_window, SDL_FALSE);
 	const int first_renderer = -1;
 	_renderer = SDL_CreateRenderer(_window, first_renderer, 0);
 	if (_renderer == nullptr)
