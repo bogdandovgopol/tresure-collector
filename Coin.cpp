@@ -34,5 +34,6 @@ void Coin::simulate_AI(Uint32, Assets*, Input*, Scene* scene)
 	if (distance_to_player < 50.0f)
 	{
 		player->collect_coin(1);
+
 	}
 }

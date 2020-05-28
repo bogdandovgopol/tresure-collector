@@ -11,12 +11,11 @@ Game_Scene::Game_Scene()
 {
 
 	Bomb* bomb = new Bomb("Texture.Bomb");
-	bomb->set_translation(Vector_2D(330, 300));
-	_game_objects[bomb->id()] = bomb;
+	add_game_object(bomb);
 
 	Player* player = new Player("Player");
 	player->set_translation(Vector_2D(320, 600));
-	_game_objects[player->id()] = player;
+	add_game_object(player);
 
 	load_coins();
 
@@ -25,7 +24,7 @@ Game_Scene::Game_Scene()
 		Wall* wall = new Wall("Texture.Wall.Left");
 		wall->setSize(10, 700);
 		wall->set_translation(Vector_2D(0, 0));
-		_game_objects[wall->id()] = wall;
+		add_game_object(wall);
 	}
 
 	//Wall right
@@ -33,7 +32,7 @@ Game_Scene::Game_Scene()
 		Wall* wall = new Wall("Texture.Wall.Right");
 		wall->setSize(10, 700);
 		wall->set_translation(Vector_2D(690, 0));
-		_game_objects[wall->id()] = wall;
+		add_game_object(wall);
 	}
 
 	//Wall top
@@ -41,7 +40,7 @@ Game_Scene::Game_Scene()
 		Wall* wall = new Wall("Texture.Wall.Top");
 		wall->setSize(700, 10);
 		wall->set_translation(Vector_2D(0, 0));
-		_game_objects[wall->id()] = wall;
+		add_game_object(wall);
 	}
 
 	//Wall bottom
@@ -49,7 +48,7 @@ Game_Scene::Game_Scene()
 		Wall* wall = new Wall("Texture.Wall.Bottom");
 		wall->setSize(700, 10);
 		wall->set_translation(Vector_2D(0, 670));
-		_game_objects[wall->id()] = wall;
+		add_game_object(wall);
 	}
 	
 
@@ -69,84 +68,84 @@ void Game_Scene::load_coins()
 	{
 		Coin* coin = new Coin("Texture.Coin1");
 		coin->set_translation(Vector_2D(320, 100));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin2");
 		coin->set_translation(Vector_2D(500, 180));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin3");
 		coin->set_translation(Vector_2D(70, 210));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin4");
 		coin->set_translation(Vector_2D(130, 310));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin5");
 		coin->set_translation(Vector_2D(300, 310));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin6");
 		coin->set_translation(Vector_2D(400, 410));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin7");
 		coin->set_translation(Vector_2D(220, 130));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);;
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin8");
 		coin->set_translation(Vector_2D(420, 530));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin9");
 		coin->set_translation(Vector_2D(530, 430));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin10");
 		coin->set_translation(Vector_2D(570, 300));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin11");
 		coin->set_translation(Vector_2D(580, 580));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin12");
 		coin->set_translation(Vector_2D(60, 580));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin13");
 		coin->set_translation(Vector_2D(210, 380));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 
 	{
 		Coin* coin = new Coin("Texture.Coin14");
 		coin->set_translation(Vector_2D(280, 490));
-		_game_objects[coin->id()] = coin;
+		add_game_object(coin);
 	}
 }
