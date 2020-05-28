@@ -89,6 +89,12 @@ Assets::Assets(SDL_Renderer* renderer)
 		_assets[sound->id()] = sound;
 	}
 
+	// Create explosion sound
+	{
+		Sound* sound = new Sound("Sound.Explosion", "Assets/explosion.wav");
+		_assets[sound->id()] = sound;
+	}
+
 	// Create walking sound
 	{
 		Sound* sound = new Sound("Sound.Walking", "Assets/walking.wav");
@@ -106,6 +112,7 @@ Assets::Assets(SDL_Renderer* renderer)
 		Sound* sound = new Sound("Sound.Die", "Assets/die.wav");
 		_assets[sound->id()] = sound;
 	}
+
 
 	// Create portal entry texture.
 	{
