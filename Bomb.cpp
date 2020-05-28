@@ -45,9 +45,17 @@ void Bomb::simulate_AI(Uint32, Assets* assets, Input*, Scene* scene)
 
 	if (distance_to_player < 30.0f)
 	{
-		const int coin_channel = 2;
-		Sound* sound = (Sound*)assets->get_asset("Sound.Explosion");
-		Mix_PlayChannel(coin_channel, sound->data(), 0);
+	
+		{
+			const int coin_channel = 2;
+			Sound* sound = (Sound*)assets->get_asset("Sound.Explosion");
+			Mix_PlayChannel(coin_channel, sound->data(), 0);
+		}
+		{
+			const int die_channel = 1;
+			Sound* sound = (Sound*)assets->get_asset("Sound.Die");
+			Mix_PlayChannel(die_channel, sound->data(), 0);
+		}
 		scene->remove_game_object(_id);
 		//Mix_HaltChannel(coin_channel);
 		//std::cout << "SOUND" << std::endl;
