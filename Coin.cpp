@@ -3,8 +3,7 @@
 #include "Coin.h"
 #include "player.h"
 
-Coin::Coin(std::string id)
-	: Game_Object(id, "Texture.Coin")
+Coin::Coin(std::string id) : Game_Object(id, "Texture.Coin")
 {
 	_height = 30;
 	_width = 30;
@@ -34,6 +33,6 @@ void Coin::simulate_AI(Uint32, Assets*, Input*, Scene* scene)
 
 	if (distance_to_player < 50.0f)
 	{
-		player->set_translation(Vector_2D(300, 600));
+		player->collect_coin(1);
 	}
 }

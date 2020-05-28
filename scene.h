@@ -19,6 +19,9 @@ public:
 	Game_Object* get_game_object(std::string id);
 	std::vector<Game_Object*> get_game_objects();
 
+	void add_game_object(Game_Object* game_object);
+	void remove_game_object(std::string id);
+
 	std::string id();
 
 protected:

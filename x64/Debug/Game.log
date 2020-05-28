@@ -2,8 +2,27 @@
   asset.cpp
   assets.cpp
   Bomb.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(36,7): error C2143: syntax error: missing ';' before 'std::string'
   Circle_2D.cpp
   Coin.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(36,7): error C2143: syntax error: missing ';' before 'std::string'
   Wall.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(36,7): error C2143: syntax error: missing ';' before 'std::string'
   editor.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(36,7): error C2143: syntax error: missing ';' before 'std::string'
   engine.cpp
+  game_object.cpp
+  game_scene.cpp
+  input.cpp
+  main.cpp
+  player.cpp
+  Portal_Entry.cpp
+  Portal_Exit.cpp
+  scene.cpp
+  Sound.cpp
+  text.cpp
+  texture.cpp
+  Generating Code...
+  Compiling...
+  vector_2D.cpp
+  Generating Code...

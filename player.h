@@ -26,10 +26,14 @@ public:
 	void push_state(State state, Assets* assets);
 	void pop_state(Assets* assets);
 
+	void collect_coin(int worth);
+	int get_score();
+
 private:
 	void handle_enter_state(State state, Assets* assets);
 	void handle_exit_state(State state, Assets* assets);
 
+	int _score = 0;
 	float _speed;
 	std::stack<State> _state;
 };
