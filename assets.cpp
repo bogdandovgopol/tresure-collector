@@ -18,6 +18,12 @@ Assets::Assets(SDL_Renderer* renderer)
 		Texture* texture = new Texture("Texture.Dino", "Assets/dino.png", renderer);
 		_assets[texture->id()] = texture;
 	}
+
+	// Cache Dino Texture.
+	{
+		Texture* texture = new Texture("Texture.BG", "Assets/bg.png", renderer);
+		_assets[texture->id()] = texture;
+	}
 	
 	// Cache Dino Walking Texture.
 	{

@@ -134,8 +134,8 @@ void Engine::render(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scen
 	const Uint8 green = 0;
 	const Uint8 blue  = 255;
 	const Uint8 alpha = 255;
-	const int render_color_success = 0;
-	const int render_color_result  = SDL_SetRenderDrawColor(_renderer, red, green, blue, alpha);
+	/*const int render_color_success = 0;
+	const int render_color_result  = SDL_SetRenderDrawColor(_renderer, red, green, blue, alpha);	
 	if(render_color_result != render_color_success)
 	{
 		std::cout << "Failed to set render color" << std::endl;
@@ -165,6 +165,9 @@ void Engine::render(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scen
 		game_object->render(milliseconds_to_simulate, assets, _renderer, config);
 	}
 
+	//render bg
+	Texture* bgTexture = (Texture*)assets->get_asset("Texture.BG");
+	SDL_RenderCopy(_renderer, bgTexture->data(), NULL, NULL);
 	SDL_RenderPresent(_renderer);
 }
 
