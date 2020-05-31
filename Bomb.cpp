@@ -4,13 +4,52 @@
 #include "player.h"
 #include "Sound.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <iostream>
+
 Bomb::Bomb(std::string id)
 	: Game_Object(id, "Texture.Bomb")
 {
 	_height = 40;
 	_width = 40;
 	_translation = Vector_2D(330, 300);
-	_velocity = Vector_2D(0.04f, 0);
+	float speed = 4.f;
+	int randomNumber;
+
+	srand((unsigned int)time(NULL));
+	randomNumber = rand() % 8 + 1;
+	std::cout << randomNumber << std::endl;
+
+	//change bomb direction based on random number
+	switch (randomNumber) {
+	case 1:
+		_velocity = Vector_2D(0.04f * speed, 0.00f * speed);
+		break;
+	case 2:
+		_velocity = Vector_2D(0.02f * speed, 0.02f * speed);
+		break;
+	case 3:
+		_velocity = Vector_2D(0.00f * speed, 0.04f * speed);
+		break;
+	case 4:
+		_velocity = Vector_2D(-0.02f * speed, 0.02f * speed);
+		break;
+	case 5:
+		_velocity = Vector_2D(-0.04f * speed, 0.00f * speed);
+		break;
+	case 6:
+		_velocity = Vector_2D(-0.02f * speed, -0.02f * speed);
+		break;
+	case 7:
+		_velocity = Vector_2D(0.00f * speed, -0.04f * speed);
+		break;
+	case 8:
+		_velocity = Vector_2D(0.02f * speed, -0.02f * speed);
+		break;
+	}
+	
 }
 Bomb::~Bomb()
 {
@@ -26,12 +65,13 @@ void Bomb::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer*
 
 void Bomb::simulate_AI(Uint32, Assets* assets, Input*, Scene* scene)
 {
-	if (_translation.x() > 400.f && !_has_spawned_another) {
+
+	if (((_translation.x() > 400.f || _translation.y() > 400.f) || (_translation.x() < 200.f || _translation.y() < 200.f)) && !_has_spawned_another) {
 		Bomb* bomb = new Bomb(id() + "new");
 		scene->add_game_object(bomb);
 		_has_spawned_another = true;
 	}
-	else if (_translation.x() > 700.f) {
+	else if (_translation.x() > 700.f || _translation.y() > 700.f) {
 		scene->remove_game_object(id());
 	}
 

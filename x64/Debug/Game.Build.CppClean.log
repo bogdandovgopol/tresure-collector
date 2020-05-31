@@ -1,5 +1,5 @@
-\\mac\home\desktop\game.nosync\x64\debug\game.ilk
 \\mac\home\desktop\game.nosync\x64\debug\game.exe
+\\mac\home\desktop\game.nosync\x64\debug\game.ilk
 \\mac\home\desktop\game.nosync\x64\debug\game.pdb
 \\mac\home\desktop\game.nosync\x64\debug\game.res
 \\mac\home\desktop\game.nosync\x64\debug\vc142.pdb
@@ -20,11 +20,11 @@
 \\mac\home\desktop\game.nosync\x64\debug\wall.obj
 \\mac\home\desktop\game.nosync\x64\debug\coin.obj
 \\mac\home\desktop\game.nosync\x64\debug\circle_2d.obj
-\\mac\home\desktop\game.nosync\x64\debug\bomb.obj
 \\mac\home\desktop\game.nosync\x64\debug\assets.obj
 \\mac\home\desktop\game.nosync\x64\debug\asset.obj
 \\mac\home\desktop\game.nosync\x64\debug\animated_texture.obj
 \\mac\home\desktop\game.nosync\x64\debug\vector_2d.obj
+\\mac\home\desktop\game.nosync\x64\debug\bomb.obj
 \\mac\home\desktop\game.nosync\x64\debug\game.tlog\link.read.1.tlog
 \\mac\home\desktop\game.nosync\x64\debug\game.tlog\link.command.1.tlog
 \\mac\home\desktop\game.nosync\x64\debug\game.tlog\rc.command.1.tlog
