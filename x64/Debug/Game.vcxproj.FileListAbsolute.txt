@@ -1,6 +1,0 @@
-\\Mac\Home\Downloads\tutorial_6\Game\x64\Debug\Game.exe
-\\Mac\Home\Downloads\tutorial_6\Game\x64\Debug\Game.pdb
-\\Mac\Home\Downloads\Game\x64\Debug\Game.exe
-\\Mac\Home\Downloads\Game\x64\Debug\Game.pdb
-\\Mac\Home\Desktop\Game.nosync\x64\Debug\Game.exe
-\\Mac\Home\Desktop\Game.nosync\x64\Debug\Game.pdb
