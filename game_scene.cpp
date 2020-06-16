@@ -5,6 +5,7 @@
 #include "Wall.h"
 #include "Portal_Entry.h"
 #include "Portal_Exit.h"
+#include "text.h"
 
 Game_Scene::Game_Scene()
 	: Scene("Game")

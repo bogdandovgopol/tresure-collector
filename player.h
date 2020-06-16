@@ -28,6 +28,8 @@ public:
 
 	void collect_coin(int worth);
 	int get_score();
+	void win(SDL_Renderer* renderer);
+	void die(SDL_Renderer* renderer);
 
 private:
 	void handle_enter_state(State state, Assets* assets);

@@ -2,6 +2,7 @@
 
 #include "player.h"
 #include "Sound.h"
+#include "text.h"
 
 Player::Player(std::string id)
 	: Game_Object(id, "Texture.Player.Idle")
@@ -18,6 +19,17 @@ Player::~Player()
 
 void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer, Configuration* config)
 {
+	//render score
+	SDL_Color text_color;
+	text_color.r = 255;
+	text_color.g = 255;
+	text_color.b = 0;
+	text_color.a = 255;
+	std::string score_txt = "Score: " + std::to_string(_score);
+
+	Text id(renderer, score_txt.c_str(), text_color, "Score.Text");
+
+	id.render(renderer, Vector_2D(20, 10));
 	
 	Animated_Texture* texture = (Animated_Texture*)assets->get_asset(_texture_id);
 	texture->update_frame(milliseconds_to_simulate);
@@ -123,6 +135,38 @@ void Player::collect_coin(int worth)
 {
 	_score += worth;
 }
+
+void Player::win(SDL_Renderer* renderer)
+{
+	//render text
+	SDL_Color text_color;
+	text_color.r = 124;
+	text_color.g = 252;
+	text_color.b = 0;
+	text_color.a = 255;
+
+	Text id(renderer, "YOU WIN!", text_color, "Win.Text");
+
+	id.render(renderer, Vector_2D(20, 10));
+}
+
+void Player::die(SDL_Renderer* renderer)
+{
+	//render die text
+	SDL_Color text_color;
+	text_color.r = 255;
+	text_color.g = 0;
+	text_color.b = 0;
+	text_color.a = 0;
+
+	Text id(renderer, "YOU LOST :(", text_color, "Die.Text");
+}
+
+int Player::get_score()
+{
+	return _score;
+}
+
 
 void Player::handle_enter_state(State state, Assets* assets)
 {

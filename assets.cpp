@@ -2,6 +2,7 @@
 #include "texture.h"
 #include "animated_texture.h"
 #include "Sound.h"
+#include "text.h"
 
 #include <iostream>
 
