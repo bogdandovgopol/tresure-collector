@@ -87,9 +87,9 @@ void Bomb::simulate_AI(Uint32, Assets* assets, Input*, Scene* scene)
 	{
 	
 		{
-			const int coin_channel = 2;
+			const int explosion_channel = 2;
 			Sound* sound = (Sound*)assets->get_asset("Sound.Explosion");
-			Mix_PlayChannel(coin_channel, sound->data(), 0);
+			Mix_PlayChannel(explosion_channel, sound->data(), 0);
 		}
 		{
 			const int die_channel = 1;

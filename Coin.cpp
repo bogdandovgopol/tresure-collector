@@ -4,12 +4,14 @@
 #include "player.h"
 #include "Sound.h"
 #include <iostream>
+#include <time.h>
 
 Coin::Coin(std::string id) : Game_Object(id, "Texture.Coin")
 {
 	_id = id;
 	_height = 30;
 	_width = 30;
+	
 	//_translation = Vector_2D(150, 50);
 	//_velocity = Vector_2D(0.02f, 0);
 }
@@ -30,10 +32,10 @@ void Coin::simulate_AI(Uint32, Assets* assets, Input*, Scene* scene)
 
 	Player* player = (Player*)scene->get_game_object("Player");
 
-	Vector_2D portal_center = _translation + Vector_2D((float)_width / 2, (float)_height / 2);
+	Vector_2D coin_center = _translation + Vector_2D((float)_width / 2, (float)_height / 2);
 	Vector_2D player_center = player->translation() + Vector_2D((float)player->width() / 2, (float)player->height() / 2);
 
-	float distance_to_player = (portal_center - player_center).magnitude();
+	float distance_to_player = (coin_center - player_center).magnitude();
 
 	if (distance_to_player < 30.0f)
 	{
