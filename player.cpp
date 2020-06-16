@@ -50,6 +50,11 @@ void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Rendere
 		_translation = Vector_2D(_translation.x(), 0);
 	}
 
+	//check if all coins are collected
+	if (_score == 1) {
+		win(config);
+	}
+
 	//check win/lose condition
 	if (config->player_win) {
 		{
@@ -68,6 +73,8 @@ void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Rendere
 
 	if (config->player_lose) {
 		{
+			push_state(State::Die, assets);
+
 			//render die text
 			SDL_Color text_color;
 			text_color.r = 255;
@@ -175,6 +182,7 @@ void Player::win(Configuration* config)
 
 void Player::die(Configuration* config)
 {
+	_speed = 0;
 	config->player_lose = true;
 }
 
@@ -212,9 +220,6 @@ void Player::handle_enter_state(State state, Assets* assets)
 	{
 		_texture_id = "Texture.Player.Die";
 		_speed = 0.0f;
-		const int die_channel = 2;
-		Sound* sound = (Sound*)assets->get_asset("Sound.Die");
-		Mix_PlayChannel(die_channel, sound->data(), -1);
 		break;
 	}
 	}
@@ -234,8 +239,6 @@ void Player::handle_exit_state(State state, Assets*)
 	}
 	case State::Die:
 	{
-		const int die_channel = 2;
-		Mix_HaltChannel(die_channel);
 		break;
 	}
 	}

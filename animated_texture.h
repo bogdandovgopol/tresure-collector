@@ -10,7 +10,7 @@
 class Animated_Texture : public Texture
 {
 public:
-	Animated_Texture(std::string id, std::string path, SDL_Renderer* renderer, int frame_count, Uint32 frame_duration_milliseconds);
+	Animated_Texture(std::string id, std::string path, SDL_Renderer* renderer, int frame_count, Uint32 frame_duration_milliseconds, bool should_loop);
 	~Animated_Texture();
 
 	void update_frame(Uint32 milliseconds_to_simulate);
@@ -21,4 +21,5 @@ private:
 	Uint32   _frame_duration_milliseconds;
 	Uint32   _total_time_milliseconds;
 	int      _current_frame;
+	bool	 _should_loop;
 };

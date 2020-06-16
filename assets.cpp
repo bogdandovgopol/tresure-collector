@@ -24,7 +24,7 @@ Assets::Assets(SDL_Renderer* renderer)
 	{
 		const int frame_count = 9;
 		const Uint32 frame_duration_milliseconds = 1000;
-		Asset* coin_texture = new Animated_Texture("Texture.Coin", "Assets/coin.png", renderer, frame_count, frame_duration_milliseconds);
+		Asset* coin_texture = new Animated_Texture("Texture.Coin", "Assets/coin.png", renderer, frame_count, frame_duration_milliseconds, true);
 		_assets[coin_texture->id()] = coin_texture;
 	}
 
@@ -32,7 +32,7 @@ Assets::Assets(SDL_Renderer* renderer)
 	{
 		const int frame_count = 1;
 		const Uint32 frame_duration_milliseconds = 100;
-		Asset* coin_texture = new Animated_Texture("Texture.Bomb", "Assets/bomb.png", renderer, frame_count, frame_duration_milliseconds);
+		Asset* coin_texture = new Animated_Texture("Texture.Bomb", "Assets/bomb.png", renderer, frame_count, frame_duration_milliseconds, false);
 		_assets[coin_texture->id()] = coin_texture;
 	}
 
@@ -40,7 +40,7 @@ Assets::Assets(SDL_Renderer* renderer)
 	{
 		const int frame_count = 7;
 		const Uint32 frame_duration_milliseconds = 100;
-		Asset* player_animated_texture = new Animated_Texture("Texture.Player.Idle", "Assets/player.idle.png", renderer, frame_count, frame_duration_milliseconds);
+		Asset* player_animated_texture = new Animated_Texture("Texture.Player.Idle", "Assets/player.idle.png", renderer, frame_count, frame_duration_milliseconds, true);
 		_assets[player_animated_texture->id()] = player_animated_texture;
 	}
 
@@ -48,15 +48,7 @@ Assets::Assets(SDL_Renderer* renderer)
 	{
 		const int frame_count = 7;
 		const Uint32 frame_duration_milliseconds = 100;
-		Asset* player_animated_texture = new Animated_Texture("Texture.Player.Walk","Assets/player.walk.png", renderer, frame_count, frame_duration_milliseconds);
-		_assets[player_animated_texture->id()] = player_animated_texture;
-	}
-
-	// Create player run texture.
-	{
-		const int frame_count = 7;
-		const Uint32 frame_duration_milliseconds = 100;
-		Asset* player_animated_texture = new Animated_Texture("Texture.Player.Run", "Assets/player.run.png", renderer, frame_count, frame_duration_milliseconds);
+		Asset* player_animated_texture = new Animated_Texture("Texture.Player.Walk","Assets/player.walk.png", renderer, frame_count, frame_duration_milliseconds, true);
 		_assets[player_animated_texture->id()] = player_animated_texture;
 	}
 
@@ -64,15 +56,7 @@ Assets::Assets(SDL_Renderer* renderer)
 	{
 		const int frame_count = 7;
 		const Uint32 frame_duration_milliseconds = 100;
-		Asset* player_animated_texture = new Animated_Texture("Texture.Player.Die", "Assets/player.die.png", renderer, frame_count, frame_duration_milliseconds);
-		_assets[player_animated_texture->id()] = player_animated_texture;
-	}
-
-	// Create player attack texture.
-	{
-		const int frame_count = 7;
-		const Uint32 frame_duration_milliseconds = 100;
-		Asset* player_animated_texture = new Animated_Texture("Texture.Player.Attack", "Assets/player.attack.png", renderer, frame_count, frame_duration_milliseconds);
+		Asset* player_animated_texture = new Animated_Texture("Texture.Player.Die", "Assets/player.die.png", renderer, frame_count, frame_duration_milliseconds, false);
 		_assets[player_animated_texture->id()] = player_animated_texture;
 	}
 
@@ -102,35 +86,11 @@ Assets::Assets(SDL_Renderer* renderer)
 		_assets[sound->id()] = sound;
 	}
 
-	// Create running sound
-	{
-		Sound* sound = new Sound("Sound.Running", "Assets/running.wav");
-		_assets[sound->id()] = sound;
-	}
-
 	// Create die sound
 	{
 		Sound* sound = new Sound("Sound.Die", "Assets/die.wav");
 		_assets[sound->id()] = sound;
 	}
-
-
-	// Create portal entry texture.
-	{
-		const int frame_count = 8;
-		const Uint32 frame_duration_milliseconds = 100;
-		Asset* animated_texture = new Animated_Texture("Texture.Portal.Entry", "Assets/portal.green.png", renderer, frame_count, frame_duration_milliseconds);
-		_assets[animated_texture->id()] = animated_texture;
-	}
-
-	// Create portal exit texture.
-	{
-		const int frame_count = 8;
-		const Uint32 frame_duration_milliseconds = 100;
-		Asset* animated_texture = new Animated_Texture("Texture.Portal.Exit", "Assets/portal.purple.png", renderer, frame_count, frame_duration_milliseconds);
-		_assets[animated_texture->id()] = animated_texture;
-	}
-	
 }
 
 Assets::~Assets()
