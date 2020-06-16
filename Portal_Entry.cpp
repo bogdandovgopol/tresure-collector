@@ -16,7 +16,7 @@ Portal_Entry::~Portal_Entry()
 {
 
 }
-void Portal_Entry::simulate_AI(Uint32 , Assets* , Input*, Scene* scene)
+void Portal_Entry::simulate_AI(Uint32 , Assets* , Input*, Scene* scene, Configuration*)
 {
 	Player* player = (Player*)scene->get_game_object("Player");
 

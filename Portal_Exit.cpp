@@ -15,7 +15,7 @@ Portal_Exit::~Portal_Exit()
 
 }
 
-void Portal_Exit::simulate_AI(Uint32 , Assets* , Input*, Scene* )
+void Portal_Exit::simulate_AI(Uint32 , Assets* , Input*, Scene*, Configuration*)
 {
 }
 

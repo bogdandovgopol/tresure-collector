@@ -12,7 +12,7 @@ Wall::Wall(std::string id)
 Wall::~Wall()
 {
 }
-void Wall::simulate_AI(Uint32, Assets*, Input*, Scene*)
+void Wall::simulate_AI(Uint32, Assets*, Input*, Scene*, Configuration*)
 {
 }
 

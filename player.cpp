@@ -19,17 +19,19 @@ Player::~Player()
 
 void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer, Configuration* config)
 {
-	//render score
-	SDL_Color text_color;
-	text_color.r = 255;
-	text_color.g = 255;
-	text_color.b = 0;
-	text_color.a = 255;
-	std::string score_txt = "Score: " + std::to_string(_score);
+	{
+		//render score
+		SDL_Color text_color;
+		text_color.r = 255;
+		text_color.g = 255;
+		text_color.b = 0;
+		text_color.a = 255;
+		std::string score_txt = "Score: " + std::to_string(_score);
 
-	Text id(renderer, score_txt.c_str(), text_color, "Score.Text");
+		Text id(renderer, score_txt.c_str(), text_color, "Score.Text");
 
-	id.render(renderer, Vector_2D(20, 10));
+		id.render(renderer, Vector_2D(20, 10));
+	}
 	
 	Animated_Texture* texture = (Animated_Texture*)assets->get_asset(_texture_id);
 	texture->update_frame(milliseconds_to_simulate);
@@ -48,10 +50,40 @@ void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Rendere
 		_translation = Vector_2D(_translation.x(), 0);
 	}
 
+	//check win/lose condition
+	if (config->player_win) {
+		{
+			//render win text
+			SDL_Color text_color;
+			text_color.r = 124;
+			text_color.g = 252;
+			text_color.b = 0;
+			text_color.a = 255;
+
+			Text id(renderer, "YOU WIN!", text_color, "Win.Text");
+
+			id.render(renderer, Vector_2D(300, 300));
+		}
+	}
+
+	if (config->player_lose) {
+		{
+			//render die text
+			SDL_Color text_color;
+			text_color.r = 255;
+			text_color.g = 0;
+			text_color.b = 0;
+			text_color.a = 0;
+
+			Text id(renderer, "YOU LOST :(", text_color, "Die.Text");
+			id.render(renderer, Vector_2D(300, 300)); 
+		}
+	}
+
 	Game_Object::render(milliseconds_to_simulate, assets, renderer, config);
 }
 
-void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene* )
+void Player::simulate_AI(Uint32, Assets* assets, Input* input, Scene*, Configuration*)
 {
 
 	//play die animation when X key is pressed
@@ -136,30 +168,19 @@ void Player::collect_coin(int worth)
 	_score += worth;
 }
 
-void Player::win(SDL_Renderer* renderer)
+void Player::win(Configuration* config)
 {
-	//render text
-	SDL_Color text_color;
-	text_color.r = 124;
-	text_color.g = 252;
-	text_color.b = 0;
-	text_color.a = 255;
-
-	Text id(renderer, "YOU WIN!", text_color, "Win.Text");
-
-	id.render(renderer, Vector_2D(20, 10));
+	config->player_win = true;
 }
 
-void Player::die(SDL_Renderer* renderer)
+void Player::die(Configuration* config)
 {
-	//render die text
-	SDL_Color text_color;
-	text_color.r = 255;
-	text_color.g = 0;
-	text_color.b = 0;
-	text_color.a = 0;
+	config->player_lose = true;
+}
 
-	Text id(renderer, "YOU LOST :(", text_color, "Die.Text");
+SDL_Renderer* Player::get_renderer()
+{
+	return _renderer;
 }
 
 int Player::get_score()

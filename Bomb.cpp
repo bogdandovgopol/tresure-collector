@@ -63,7 +63,7 @@ void Bomb::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer*
 	Game_Object::render(milliseconds_to_simulate, assets, renderer, config);
 }
 
-void Bomb::simulate_AI(Uint32, Assets* assets, Input*, Scene* scene)
+void Bomb::simulate_AI(Uint32, Assets* assets, Input*, Scene* scene, Configuration* config)
 {
 
 	if (((_translation.x() > 400.f || _translation.y() > 400.f) || (_translation.x() < 200.f || _translation.y() < 200.f)) && !_has_spawned_another) {
@@ -97,8 +97,8 @@ void Bomb::simulate_AI(Uint32, Assets* assets, Input*, Scene* scene)
 			Mix_PlayChannel(die_channel, sound->data(), 0);
 		}
 		scene->remove_game_object(_id);
-		//Mix_HaltChannel(coin_channel);
-		//std::cout << "SOUND" << std::endl;
+
+		player->die(config);
 
 	}
 }

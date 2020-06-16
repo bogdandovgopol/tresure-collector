@@ -20,7 +20,7 @@ public:
 	SDL_Window*   window();
 
 private:
-	void simulate_AI(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scene, Input* input);
+	void simulate_AI(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scene, Input* input, Configuration* config);
 	void simulate_physics(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scene);
 	void render(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scene, Configuration* config);
 

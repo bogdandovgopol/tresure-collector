@@ -27,7 +27,7 @@ void Coin::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer*
 	Game_Object::render(milliseconds_to_simulate, assets, renderer, config);
 }
 
-void Coin::simulate_AI(Uint32, Assets* assets, Input*, Scene* scene)
+void Coin::simulate_AI(Uint32, Assets* assets, Input*, Scene* scene, Configuration*)
 {
 
 	Player* player = (Player*)scene->get_game_object("Player");

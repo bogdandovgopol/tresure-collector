@@ -9,7 +9,7 @@ public:
 	Player(std::string id);
 	~Player();
 
-	virtual void simulate_AI(Uint32 milliseconds_to_simulate, Assets* assets, Input* input, Scene* scene) override;
+	virtual void simulate_AI(Uint32 milliseconds_to_simulate, Assets* assets, Input* input, Scene* scene, Configuration* config) override;
 	virtual void render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Renderer* renderer, Configuration* config) override;
 
 	void set_speed(float speed);
@@ -28,8 +28,9 @@ public:
 
 	void collect_coin(int worth);
 	int get_score();
-	void win(SDL_Renderer* renderer);
-	void die(SDL_Renderer* renderer);
+	void win(Configuration* config);
+	void die(Configuration* config);
+	SDL_Renderer* get_renderer();
 
 private:
 	void handle_enter_state(State state, Assets* assets);
@@ -37,5 +38,6 @@ private:
 
 	int _score = 0;
 	float _speed;
+	SDL_Renderer* _renderer;
 	std::stack<State> _state;
 };

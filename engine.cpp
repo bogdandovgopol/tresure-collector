@@ -96,17 +96,17 @@ Engine::~Engine()
 
 void Engine::simulate(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scene, Input* input, Configuration* config)
 {
-	simulate_AI(milliseconds_to_simulate, assets, scene, input);
+	simulate_AI(milliseconds_to_simulate, assets, scene, input, config);
 	simulate_physics(milliseconds_to_simulate, assets, scene);
 	render(milliseconds_to_simulate, assets, scene, config);
 }
 
-void Engine::simulate_AI(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scene, Input* input)
+void Engine::simulate_AI(Uint32 milliseconds_to_simulate, Assets* assets, Scene* scene, Input* input, Configuration* config)
 {
 	std::vector<Game_Object*> game_objects = scene->get_game_objects();
 	for(Game_Object* game_object : game_objects)
 	{
-		game_object->simulate_AI(milliseconds_to_simulate, assets, input, scene);
+		game_object->simulate_AI(milliseconds_to_simulate, assets, input, scene, config);
 	}
 }
 
