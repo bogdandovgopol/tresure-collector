@@ -1,0 +1,40 @@
+﻿  animated_texture.cpp
+\\Mac\Home\Desktop\Game.nosync\animated_texture.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  asset.cpp
+  assets.cpp
+\\Mac\Home\Desktop\Game.nosync\assets.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Bomb.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Circle_2D.cpp
+  Coin.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Wall.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  editor.cpp
+\\Mac\Home\Desktop\Game.nosync\scene.h(7,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  engine.cpp
+\\Mac\Home\Desktop\Game.nosync\engine.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  game_object.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  game_scene.cpp
+\\Mac\Home\Desktop\Game.nosync\scene.h(7,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  input.cpp
+\\Mac\Home\Desktop\Game.nosync\input.cpp(5,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  main.cpp
+\\Mac\Home\Desktop\Game.nosync\engine.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  player.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Portal_Entry.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Portal_Exit.cpp
+\\Mac\Home\Desktop\Game.nosync\game_object.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  scene.cpp
+\\Mac\Home\Desktop\Game.nosync\scene.h(7,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Sound.cpp
+\\Mac\Home\Desktop\Game.nosync\Sound.h(3,10): fatal error C1083: Cannot open include file: 'SDL_mixer.h': No such file or directory
+  text.cpp
+\\Mac\Home\Desktop\Game.nosync\text.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  texture.cpp
+\\Mac\Home\Desktop\Game.nosync\texture.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Compiling...
+  vector_2D.cpp

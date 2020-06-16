@@ -1,8 +1,2 @@
-﻿  Bomb.cpp
-  Circle_2D.cpp
-  animated_texture.cpp
-  asset.cpp
-  assets.cpp
-  vector_2D.cpp
-  Generating Code...
+﻿  game_scene.cpp
   Game.vcxproj -> \\Mac\Home\Desktop\Game.nosync\x64\Debug\Game.exe

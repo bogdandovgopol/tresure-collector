@@ -23,7 +23,7 @@ Assets::Assets(SDL_Renderer* renderer)
 	// Coin texture.
 	{
 		const int frame_count = 9;
-		const Uint32 frame_duration_milliseconds = 1000;
+		const Uint32 frame_duration_milliseconds = 2000;
 		Asset* coin_texture = new Animated_Texture("Texture.Coin", "Assets/coin.png", renderer, frame_count, frame_duration_milliseconds, true);
 		_assets[coin_texture->id()] = coin_texture;
 	}

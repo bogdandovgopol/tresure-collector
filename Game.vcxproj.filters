@@ -66,12 +66,6 @@
     <ClCompile Include="Sound.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Portal_Entry.cpp">
-      <Filter>Textures</Filter>
-    </ClCompile>
-    <ClCompile Include="Portal_Exit.cpp">
-      <Filter>Textures</Filter>
-    </ClCompile>
     <ClCompile Include="Coin.cpp">
       <Filter>Textures</Filter>
     </ClCompile>
@@ -133,12 +127,6 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Portal_Entry.h">
-      <Filter>Textures</Filter>
-    </ClInclude>
-    <ClInclude Include="Portal_Exit.h">
-      <Filter>Textures</Filter>
     </ClInclude>
     <ClInclude Include="Coin.h">
       <Filter>Textures</Filter>

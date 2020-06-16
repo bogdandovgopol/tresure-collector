@@ -3,8 +3,6 @@
 #include "Bomb.h"
 #include "player.h"
 #include "Wall.h"
-#include "Portal_Entry.h"
-#include "Portal_Exit.h"
 #include "text.h"
 
 Game_Scene::Game_Scene()
@@ -95,6 +93,49 @@ void Game_Scene::load_coins()
 		coin->set_translation(Vector_2D(300, 310));
 		add_game_object(coin);
 	}
+
+	{
+		Coin* coin = new Coin("Texture.Coin55");
+		coin->set_translation(Vector_2D(250, 310));
+		add_game_object(coin);
+	}
+
+	{
+		Coin* coin = new Coin("Texture.Coin51");
+		coin->set_translation(Vector_2D(360, 310));
+		add_game_object(coin);
+	}
+
+	{
+		Coin* coin = new Coin("Texture.Coin551");
+		coin->set_translation(Vector_2D(410, 310));
+		add_game_object(coin);
+	}
+
+	{
+		Coin* coin = new Coin("Texture.Coin52");
+		coin->set_translation(Vector_2D(330, 340));
+		add_game_object(coin);
+	}
+
+	{
+		Coin* coin = new Coin("Texture.Coin552");
+		coin->set_translation(Vector_2D(330, 380));
+		add_game_object(coin);
+	}
+
+	{
+		Coin* coin = new Coin("Texture.Coin53");
+		coin->set_translation(Vector_2D(330, 280));
+		add_game_object(coin);
+	}
+
+	{
+		Coin* coin = new Coin("Texture.Coin553");
+		coin->set_translation(Vector_2D(330, 230));
+		add_game_object(coin);
+	}
+
 
 	{
 		Coin* coin = new Coin("Texture.Coin6");

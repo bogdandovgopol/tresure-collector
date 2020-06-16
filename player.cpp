@@ -28,9 +28,12 @@ void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Rendere
 		text_color.a = 255;
 		std::string score_txt = "Score: " + std::to_string(_score);
 
-		Text id(renderer, score_txt.c_str(), text_color, "Score.Text");
+		Text scoreTxt(renderer, score_txt.c_str(), text_color, "Score.Text");
+		scoreTxt.render(renderer, Vector_2D(20, 10));
 
-		id.render(renderer, Vector_2D(20, 10));
+		//render objective text
+		Text objectiveTxt(renderer, "Collect all the coins to win!", text_color, "Score.Text");
+		objectiveTxt.render(renderer, Vector_2D(250, 10));
 	}
 	
 	Animated_Texture* texture = (Animated_Texture*)assets->get_asset(_texture_id);
@@ -51,7 +54,7 @@ void Player::render(Uint32 milliseconds_to_simulate, Assets* assets, SDL_Rendere
 	}
 
 	//check if all coins are collected
-	if (_score == 1) {
+	if (_score == 20) {
 		win(config);
 	}
 
